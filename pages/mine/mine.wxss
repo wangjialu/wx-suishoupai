@@ -1,0 +1,61 @@
+page {
+    background-color: #ecf0f3;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 750rpx;
+    height: 400rpx;
+    background-color: #22DD82;
+}
+
+.user-info .avatar {
+    display: block;
+    margin-top: 110rpx;
+    width: 180rpx;
+    height: 180rpx;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 5rpx solid #fff;
+}
+
+.user-info .name {
+    margin-top: 20rpx;
+    font-size: 40rpx;
+    color: #fff;
+}
+
+.tab-list {
+    padding: 0rpx 20rpx;
+}
+
+.tab-list .tab-item {
+    display: flex;
+    align-items: center;
+    margin-top: 20rpx;
+    padding: 0rpx 14rpx 0 20rpx;
+    height: 100rpx;
+    border-radius: 10rpx;
+    background-color: #fff;
+}
+
+.tab-list .tab-item .icon {
+    display: block;
+    width: 36rpx;
+    height: 36rpx;
+}
+
+.tab-list .tab-item text {
+    flex: 1;
+    margin-left: 20rpx;
+    font-size: 30rpx;
+    color: #2E2E2E;
+}
+
+.tab-list .tab-item .arrow {
+    display: block;
+    width: 32rpx;
+    height: 32rpx;
+}

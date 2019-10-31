@@ -1,0 +1,10 @@
+<view class="container">
+    <view class="feedback-wrap">
+        <view class="title">意见反馈</view>
+        <view class="content">
+            <textarea bindinput="feedbackInput" maxlength="{{500}}" placeholder="请输入反馈的具体内容" placeholderStyle="color:#8B8B8B;"></textarea>
+            <view class="counter">{{content.length}}/500</view>
+        </view>
+    </view>
+    <view bindtap="submit" class="button">确认提交意见反馈</view>
+</view>

@@ -1,0 +1,8 @@
+<view class="container">
+    <image class="icon" mode="aspectFit" src="../../images/icon-success.png"></image>
+    <view class="title">诉讼成功</view>
+    <view class="des">感谢您的诉讼，我们会尽快安排处理！</view>
+    <navigator class="button green" hoverClass="none" url="/pages/myComplaint/myComplaint">点击查看投诉详情</navigator>
+    <navigator class="button gray" hoverClass="none" openType="switchTab" url="/pages/index/index">返回首页</navigator>
+    <view class="copy">Copyright © 2019 als.zbwgg.com</view>
+</view>

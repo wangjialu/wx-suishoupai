@@ -1,0 +1,59 @@
+page {
+    background-color: #ecf0f3;
+}
+
+.container {
+    padding: 20rpx 20rpx 0;
+}
+
+.feedback-wrap {
+    padding: 0 20rpx 20rpx;
+    border-radius: 10rpx;
+    background: #fff;
+}
+
+.feedback-wrap .title {
+    height: 60rpx;
+    line-height: 60rpx;
+    padding-left: 54rpx;
+    background-image: url('data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAMAAADW3miqAAAAkFBMVEUAAAAc3oMZ4oAc34Mc34Md34Md3oMc3oMX338R3Xkc3oMb2H4b3oMc3oMb34Mc3oIc34Mb3oIc3oMY34EU3X8N3Hwc3oIb3oIb3oIb34Mb3oMc3oMb3oMb34Ma34IA03Ec3oIc3oMb3oMa34Ia4IIY3YIa3oIb34MZ34Eb34Ia3oIa3oIa34IZ3YEc34Ma3oMiTyWdAAAAMHRSTlMA/BTd9vD5qQsO/hGM8nvo5ZjhGxgHs8O8nDTsyncuBNvUoV86JJKmV7dpgm5DrU15gyNBAAABrUlEQVQ4y+XRWZKbMBSFYU0IISwLEEJuY+ah8dS9/93lmpiEimlvIP8LFHwPpyT0SHQu9zbKXSfQs2qqMWcbcVxP1ROZs9TtbqNW43P6RCVlsQk2MjGj5RMdE6+wSJhHqUV/s4WX9H+Q2otg707QeVop8S8yjmNIjeEK7b3kuEaiaz+h8V79gCggZEMChWA2UTkjQVIyB0/7gkSnAYnLV7bkT3ZB+veZp3uK5+FYLvEvsiBM9/BudrmUgILb+bCUdXZBUua7FBWaR2zelC6tN7GI6wKd8OkyD38NkEpuAFDE2775CRWq7j+xRoms4wjubgvB3emYyggQZljtTPVqKrNT8FMmgJiSOImngYg1EGSYPhIsFQMU8ezqcszyxi++S0PCIAiJKb8Lv8k5zt01YxGg2AzdZw1fPF07f7xeR9/V2sM8r/1uSEemAX2EyJLjpW0ij8FApRjGzItO7eVILApi/kSQJcP9NmanhtLGZePlPoQWQeEazTAgZijLwZBgBpto3X+F4uAdCh6IynNJ3lQeJEUtU85/k2OsRf1BSfwmqQ49qvq4oW9q4r76BagLLZKXSUiLAAAAAElFTkSuQmCC');
+    background-size: 36rpx 36rpx;
+    background-position: center left;
+    background-repeat: no-repeat;
+    font-size: 30rpx;
+    color: #2E2E2E;
+}
+
+.feedback-wrap .content {
+    padding-top: 18rpx;
+    padding-left: 18rpx;
+    border: 2rpx solid #ECF0F3;
+    border-radius: 10rpx;
+}
+
+.feedback-wrap .content textarea {
+    padding-right: 30rpx;
+    height: 156rpx;
+    font-size: 22rpx;
+    color: #8B8B8B;
+}
+
+.feedback-wrap .content .counter {
+    padding-right: 20rpx;
+    height: 26rpx;
+    line-height: 26rpx;
+    text-align: right;
+    font-size: 20rpx;
+    color: #8B8B8B;
+}
+
+.button {
+    margin: 635rpx 10rpx 0;
+    height: 88rpx;
+    line-height: 88rpx;
+    border-radius: 10rpx;
+    background-color: #09BB07;
+    text-align: center;
+    font-size: 36rpx;
+    color: #fff;
+}

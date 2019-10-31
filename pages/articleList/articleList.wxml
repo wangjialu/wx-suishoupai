@@ -1,0 +1,10 @@
+<view class="container">
+    <navigator class="article-wrap" hoverClass="none" url="/pages/articleDetail/articleDetail?articleId={{item._id}}" wx:for="{{articleList}}" wx:key="{{index}}">
+        <image class="cover" mode="aspectFit" src="{{item.data.cover}}"></image>
+        <view class="article-info">
+            <view class="name">{{item.title}}</view>
+            <view class="content">{{item.data.summary}}</view>
+            <view class="time">{{item.createTimeStr}}</view>
+        </view>
+    </navigator>
+</view>

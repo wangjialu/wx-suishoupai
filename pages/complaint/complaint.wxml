@@ -1,0 +1,87 @@
+<view class="container">
+    <view class="single-block">
+        <image class="icon" mode="aspectFit" src="../../images/complaint/icon-1.png"></image>
+        <view class="title">举报线索</view>
+        <view class="content">
+            <picker bindchange="pickerChange" range="{{reportTypes.types}}" value="{{complaintIndex}}">
+                <text>{{reportTypes.types[complaintIndex]}}</text>
+            </picker>
+            <image class="icon-arrow" mode="aspectFit" src="../../images/icon-arrow.png"></image>
+        </view>
+    </view>
+    <view class="multi-block">
+        <view class="title-wrap">
+            <image class="icon" mode="aspectFit" src="../../images/complaint/icon-2.png"></image>
+            <view class="title">举报详情</view>
+        </view>
+        <view class="content-wrap">
+            <textarea bindinput="contentInput" maxlength="{{500}}" placeholder="请输入举报的内容" placeholderStyle="color:#8B8B8B;" value="{{content}}"></textarea>
+            <view class="counter">{{content.length}}/500</view>
+        </view>
+    </view>
+    <view class="single-block">
+        <image class="icon" mode="aspectFit" src="../../images/complaint/icon-3.png"></image>
+        <view class="title">语音信息</view>
+        <view bindtouchend="recorderEnd" bindtouchstart="recorderStart" class="button" wx:if="{{authSetting.record}}">按 住 说 话</view>
+        <view bindtap="gotoSetting" class="content" wx:else>
+            <text>需要授权相关功能</text>
+        </view>
+    </view>
+    <view class="voice-wrap" wx:if="{{voices.length>0}}">
+        <view class="voice" wx:for="{{voices}}" wx:key="{{index}}">
+            <view bindtap="playVoices" class="duration" data-index="{{index}}">{{item.duration}}s</view>
+            <image bindtap="deleteVoices" class="delete-icon" data-index="{{index}}" mode="aspectFit" src="../../images/complaint/icon-9.png"></image>
+        </view>
+    </view>
+    <view class="single-block">
+        <image class="icon" mode="aspectFit" src="../../images/complaint/icon-4.png"></image>
+        <view class="title">视频信息</view>
+        <view bindtap="uploadVideo" class="button">上 传 视 频</view>
+    </view>
+    <view class="video-wrap" wx:if="{{videos.length>0}}">
+        <video controls="{{true}}" src="{{videos[0].tempFilePath}}"></video>
+        <cover-view>
+            <cover-image bindtap="deleteVideos" class="delete-icon" src="../../images/complaint/icon-9.png"></cover-image>
+        </cover-view>
+    </view>
+    <view class="single-block">
+        <image class="icon" mode="aspectFit" src="../../images/complaint/icon-5.png"></image>
+        <view class="title">位置信息</view>
+        <view bindtap="chooseLocation" class="content" wx:if="{{authSetting.userLocation}}">
+            <text>{{location||'请选择位置信息'}}</text>
+            <image class="icon-arrow" mode="aspectFit" src="../../images/icon-arrow.png"></image>
+        </view>
+        <view bindtap="gotoSetting" class="content" wx:else>
+            <text>需要授权相关功能</text>
+        </view>
+    </view>
+    <view class="multi-block">
+        <view class="title-wrap">
+            <image class="icon" mode="aspectFit" src="../../images/complaint/icon-6.png"></image>
+            <view class="title">照片信息</view>
+        </view>
+        <view class="image-list">
+            <view bindtap="preview" class="image-wrap" data-src="{{item}}" wx:for="{{images}}" wx:key="{{index}}">
+                <image class="image" mode="aspectFit" src="{{item}}"></image>
+                <image catchtap="deleteImage" class="delete-icon" data-index="{{index}}" mode="aspectFit" src="../../images/complaint/icon-9.png"></image>
+            </view>
+            <view bindtap="uploadImage" class="image-wrap" wx:if="{{images.length<5}}">
+                <image class="image" mode="aspectFit" src="../../images/complaint/icon-8.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="single-block">
+        <image class="icon" mode="aspectFit" src="../../images/complaint/icon-7.png"></image>
+        <view class="title">手机号码</view>
+        <view class="content">
+            <input bindinput="numberInput" maxlength="{{11}}" placeholder="手机号码，严格保密" placeholderStyle="color:#8B8B8B;" type="number" value="{{mobile}}"></input>
+        </view>
+    </view>
+    <view class="complaint-statement">
+        <checkbox-group bindchange="checkboxChange">
+            <checkbox value="checkbox"></checkbox>
+        </checkbox-group>
+        <navigator hoverClass="none" url="/pages/introduce/introduce?categoryId={{reportTypes.complaintStatement}}">同意《诉讼举报说明》</navigator>
+    </view>
+    <view bindtap="submit" class="submit-button" style="background-color: {{checkedStatement?'#09BB07':'#BFBFBF'}}">确认提交举报信息</view>
+</view>

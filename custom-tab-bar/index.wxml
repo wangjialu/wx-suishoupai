@@ -1,0 +1,16 @@
+<view class="tab-bar-wrap">
+    <view bindtap="jumpTab" class="tab-home {{activeTab=='index'?'active':''}}" data-tab="index">
+        <view class="tab-icon"></view>
+        <view class="tab-name">首页</view>
+    </view>
+    <view bindtap="jumpTab" class="tab-complaint {{activeTab=='complaint'?'active':''}}" data-tab="complaint">
+        <view class="tab-icon-wrap">
+            <view class="tab-icon"></view>
+        </view>
+        <view class="tab-name">投诉</view>
+    </view>
+    <view bindtap="jumpTab" class="tab-mine {{activeTab=='mine'?'active':''}}" data-tab="mine">
+        <view class="tab-icon"></view>
+        <view class="tab-name">我的</view>
+    </view>
+</view>

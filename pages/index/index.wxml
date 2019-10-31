@@ -1,0 +1,41 @@
+<view class="container">
+    <image class="banner" mode="aspectFit" src="{{homeDate.banner}}"></image>
+    <view class="title-wrap">
+        <view class="logo-name">
+            <image class="logo" mode="aspectFit" src="../../images/index/logo.png"></image>
+            <view class="name">阿拉善右旗人民检察院</view>
+        </view>
+        <view>
+            <navigator class="button" hoverClass="none" url="/pages/introduce/introduce?categoryId={{homeDate.litigation.id}}">
+                <image class="icon" mode="aspectFit" src="../../images/index/icon-3.png"></image>
+                <text>公益诉讼</text>
+            </navigator>
+            <view bindtap="callPhone" class="button">
+                <image class="icon" mode="aspectFit" src="../../images/index/icon-4.png"></image>
+                <text>举报电话</text>
+            </view>
+        </view>
+    </view>
+    <view class="common-block complaint-clues">
+        <view class="common-title">举报线索</view>
+        <view class="common-block-list">
+            <view bindtap="jumpToComplaint" class="common-block-wrap" data-complaint="{{item.title}}" wx:for="{{homeDate.reportCategories}}" wx:key="{{index}}">
+                <image class="icon" mode="aspectFit" src="{{item.data.image}}"></image>
+                <view class="name">{{item.title}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="common-block legal-service">
+        <view class="common-title">法律服务</view>
+        <view class="common-block-list">
+            <navigator class="common-block-wrap" hoverClass="none" url="/pages/articleList/articleList?category=legislation">
+                <image class="icon" mode="aspectFit" src="../../images/index/icon-1.png"></image>
+                <view class="name">法律宣传</view>
+            </navigator>
+            <navigator class="common-block-wrap" hoverClass="none" url="/pages/articleList/articleList?category=news">
+                <image class="icon" mode="aspectFit" src="../../images/index/icon-2.png"></image>
+                <view class="name">新闻动态</view>
+            </navigator>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,23 @@
+<view class="container">
+    <view class="user-info">
+        <image class="avatar" mode="aspectFit" src="{{userDate.user.avatar}}"></image>
+        <view class="name">{{userDate.user.username}}</view>
+    </view>
+    <view class="tab-list">
+        <navigator class="tab-item" hoverClass="none" url="/pages/myComplaint/myComplaint">
+            <image class="icon" mode="aspectFit" src="../../images/mine/icon-1.png"></image>
+            <text>我的举报</text>
+            <image class="arrow" mode="aspectFit" src="../../images/icon-arrow.png"></image>
+        </navigator>
+        <navigator class="tab-item" hoverClass="none" url="/pages/feedback/feedback">
+            <image class="icon" mode="aspectFit" src="../../images/mine/icon-2.png"></image>
+            <text>意见反馈</text>
+            <image class="arrow" mode="aspectFit" src="../../images/icon-arrow.png"></image>
+        </navigator>
+        <navigator class="tab-item" hoverClass="none" url="/pages/introduce/introduce?categoryId={{userDate.about}}">
+            <image class="icon" mode="aspectFit" src="../../images/mine/icon-3.png"></image>
+            <text>关于我们</text>
+            <image class="arrow" mode="aspectFit" src="../../images/icon-arrow.png"></image>
+        </navigator>
+    </view>
+</view>

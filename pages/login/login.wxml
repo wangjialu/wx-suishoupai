@@ -1,0 +1,7 @@
+<view class="container">
+    <image class="icon" mode="aspectFit" src="../../images/icon-logo.png"></image>
+    <view class="des">您暂未获得微信授权，将无法正常使用小程序的功能；
+如需要正常使用，请点击“授权登录”按钮，获取头像、昵称等信息授权。</view>
+    <button bindgetuserinfo="getUserInfo" class="button" openType="getUserInfo">授权登录</button>
+    <view class="copy">阿拉善右旗人民检察院</view>
+</view>

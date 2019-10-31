@@ -1,0 +1,17 @@
+.container {
+    padding: 52rpx 30rpx 0;
+}
+
+.article-name {
+    font-size: 48rpx;
+}
+
+.article-time {
+    margin-top: 36rpx;
+    font-size: 30rpx;
+    color: #888888;
+}
+
+.article-content {
+    margin-top: 72rpx;
+}

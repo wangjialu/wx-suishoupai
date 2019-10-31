@@ -1,0 +1,37 @@
+.container {
+    padding-top: 100rpx;
+}
+
+.icon {
+    margin: 0 auto;
+    display: block;
+    width: 200rpx;
+    height: 200rpx;
+}
+
+.des {
+    margin: 70rpx 46rpx;
+    font-size: 28rpx;
+    color: #888888;
+}
+
+.button {
+    margin: 0 30rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    border-radius: 10rpx;
+    background-color: #09BB07;
+    text-align: center;
+    font-size: 36rpx;
+    color: #fff;
+}
+
+.copy {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 22rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: #B2B2B2;
+}

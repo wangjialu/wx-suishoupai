@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/complaint/complaint",
+    "pages/mine/mine",
+    "pages/login/login",
+    "pages/articleList/articleList",
+    "pages/articleDetail/articleDetail",
+    "pages/myComplaint/myComplaint",
+    "pages/feedback/feedback",
+    "pages/introduce/introduce",
+    "pages/complaintSuccess/complaintSuccess"
+  ],
+  "window": {
+    "navigationBarTitleText": "阿拉善右旗人民检察院",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#000000",
+    "selectedColor": "#000000",
+    "backgroundColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/complaint/complaint",
+        "text": "投诉"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

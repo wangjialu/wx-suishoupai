@@ -1,0 +1,19 @@
+<view class="container">
+    <view class="complaint-wrap {{item.showReply?'border-none':''}}" wx:for="{{mineReportDate}}" wx:key="{{index}}">
+        <view bindtap="changeShowReply" class="complaint-info" data-index="{{index}}">
+            <view class="clue-abbr">{{item.typeFir}}</view>
+            <view class="info">
+                <view class="phone">手机号码：{{item.mobile}}</view>
+                <view class="content">{{item.content}}</view>
+                <view class="time-clue">
+                    <text>{{item.createTimeStr}}</text>
+                    <text>{{item.type}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="complaint-reply" wx:if="{{item.showReply}}">
+            <view class="text">回复：</view>
+            <view class="reply-info">{{item.reply||'暂无回复'}}</view>
+        </view>
+    </view>
+</view>

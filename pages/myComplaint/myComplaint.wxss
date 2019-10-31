@@ -1,0 +1,72 @@
+.complaint-wrap {
+    border-bottom: 1rpx solid #C7C7C7;
+}
+
+.complaint-info {
+    display: flex;
+    align-items: center;
+    padding: 0 20rpx;
+    height: 200rpx;
+}
+
+.complaint-wrap:last-child,.complaint-wrap.border-none {
+    border-bottom: none;
+}
+
+.complaint-info .clue-abbr {
+    width: 160rpx;
+    height: 160rpx;
+    line-height: 160rpx;
+    border-radius: 50%;
+    background-color: #68da8b;
+    text-align: center;
+    font-size: 100rpx;
+    color: #fff;
+}
+
+.complaint-info .info {
+    margin-left: 20rpx;
+    width: 530rpx;
+}
+
+.complaint-info .info .phone {
+    font-size: 28rpx;
+    color: #2E2E2E;
+}
+
+.complaint-info .info .content {
+    margin-top: 20rpx;
+    height: 56rpx;
+    line-height: 28rpx;
+    font-size: 22rpx;
+    color: #8B8B8B;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+
+.complaint-info .info .time-clue {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20rpx;
+    font-size: 20rpx;
+    color: #2E2E2E;
+}
+
+.complaint-reply {
+    background-color: #DEDEDE;
+    padding: 20rpx;
+}
+
+.complaint-reply .text {
+    font-size: 28rpx;
+}
+
+.complaint-reply .reply-info {
+    margin-top: 10rpx;
+    margin-left: 106rpx;
+    font-size: 22rpx;
+}
