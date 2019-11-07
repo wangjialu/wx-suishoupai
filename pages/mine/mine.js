@@ -1,3 +1,6 @@
+/**
+ * 关于我们
+ */
 var t = require("../../utils/util.js");
 
 Page({
@@ -14,8 +17,13 @@ Page({
     },
     fetchUserDate: function() {
         var e = this;
+        var w = wx.getStorageSync("userInfo");
         t.request({
-            url: "/user"
+           url: "/wx/queryUser",
+           method: "POST",
+           data: {
+             openId: w.openId
+           }
         }).then(function(t) {
             e.setData({
                 userDate: t.data

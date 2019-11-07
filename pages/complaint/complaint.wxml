@@ -3,8 +3,8 @@
         <image class="icon" mode="aspectFit" src="../../images/complaint/icon-1.png"></image>
         <view class="title">举报线索</view>
         <view class="content">
-            <picker bindchange="pickerChange" range="{{reportTypes.types}}" value="{{complaintIndex}}">
-                <text>{{reportTypes.types[complaintIndex]}}</text>
+            <picker bindchange="pickerChange" range="{{reportTypes}}" value="{{complaintIndex}}">
+                <text>{{reportTypes[complaintIndex]}}</text>
             </picker>
             <image class="icon-arrow" mode="aspectFit" src="../../images/icon-arrow.png"></image>
         </view>

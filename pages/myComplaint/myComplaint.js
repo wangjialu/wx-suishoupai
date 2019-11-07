@@ -1,3 +1,4 @@
+// 我的举报信息
 function t(t, e, a) {
     return e in t ? Object.defineProperty(t, e, {
         value: a,
@@ -23,14 +24,21 @@ Page({
     },
     fetchMineReportDate: function() {
         var t = this;
+        var w = wx.getStorageSync("userInfo");
         e.request({
-            url: "/report/mine?page=" + this.data.page
+          //  url: "/wx/queryMyReport?page=" + this.data.page,
+           url: "/wx/queryMyReport",
+           method: "POST",
+           data: {
+             openId: w.openId
+           }
         }).then(function(a) {
-            if (a.data.reports && a.data.reports.length) {
-                for (var r = 0; r < a.data.reports.length; r++) a.data.reports[r].createTimeStr = e.formatTime(a.data.reports[r].createTime), 
-                a.data.reports[r].typeFir = a.data.reports[r].type[0];
+            if (a.data && a.data.length) {
+                for (var r = 0; r < a.data.length; r++) 
+                a.data[r].createTimeStr = e.formatTime(a.data[r].createTime), 
+                a.data[r].typeFir = a.data[r].reporttype[0];
                 t.setData({
-                    mineReportDate: t.data.mineReportDate.concat(a.data.reports),
+                    mineReportDate: t.data.mineReportDate.concat(a.data),
                     page: ++t.data.page
                 });
             } else t.setData({

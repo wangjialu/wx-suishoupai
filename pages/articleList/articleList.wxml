@@ -1,9 +1,10 @@
 <view class="container">
-    <navigator class="article-wrap" hoverClass="none" url="/pages/articleDetail/articleDetail?articleId={{item._id}}" wx:for="{{articleList}}" wx:key="{{index}}">
-        <image class="cover" mode="aspectFit" src="{{item.data.cover}}"></image>
+    <navigator class="article-wrap" hoverClass="none" url="/pages/articleDetail/articleDetail?articleId={{item.id}}" 
+      wx:for="{{articleList}}" wx:key="{{index}}">
+        <image class="cover" mode="aspectFit" src="{{item.coverImg}}"></image>
         <view class="article-info">
             <view class="name">{{item.title}}</view>
-            <view class="content">{{item.data.summary}}</view>
+            <view class="content">{{item.contentTemp}}</view>
             <view class="time">{{item.createTimeStr}}</view>
         </view>
     </navigator>

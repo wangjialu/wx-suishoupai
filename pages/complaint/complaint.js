@@ -1,3 +1,4 @@
+// 举报信息填写
 function t(t, e, a) {
     return e in t ? Object.defineProperty(t, e, {
         value: a,
@@ -114,9 +115,10 @@ Page({
     fetchReportTypes: function() {
         var t = this;
         e.request({
-            url: "/report/types"
+            url: "/wx/reportTypes"
         }).then(function(e) {
-            var o = e.data, n = o.types.indexOf(a.globalData.complaint);
+            // var o = e.data, n = o.types.indexOf(a.globalData.complaint);
+          var o = e.data, n = o.indexOf(a.globalData.complaint);
             a.globalData.complaint = "", t.setData({
                 reportTypes: o,
                 complaintIndex: n > 0 ? n : 0
@@ -262,6 +264,7 @@ Page({
     },
     submit: function() {
         var t = this;
+        var w = wx.getStorageSync("userInfo");
         if (this.data.checkedStatement) if (this.data.content) if (this.data.mobile) {
             for (var a = [], o = 0; o < this.data.voices.length; o++) a.push(this.uploadFile("voices", this.data.voices[o].tempFilePath, o));
             for (o = 0; o < this.data.videos.length; o++) a.push(this.uploadFile("videos", this.data.videos[o].tempFilePath, o));
@@ -273,7 +276,7 @@ Page({
                 for (i = 0; i < t.data.videos.length; i++) o.push(t.data.fileObj["videos-" + i]);
                 for (i = 0; i < t.data.images.length; i++) n.push(t.data.fileObj["images-" + i]);
                 console.log({
-                    type: t.data.reportTypes.types[t.data.complaintIndex],
+                    type: t.data.reportTypes[t.data.complaintIndex],
                     content: t.data.content,
                     voices: a,
                     videos: o,
@@ -281,10 +284,12 @@ Page({
                     images: n,
                     mobile: t.data.mobile
                 }), e.request({
-                    url: "/report",
+                    url: "/wx/saveReport",
                     method: "POST",
                     data: {
-                        type: t.data.reportTypes.types[t.data.complaintIndex],
+                        openId: w.openId,
+                        effDate: new Date(),
+                        type: t.data.reportTypes[t.data.complaintIndex],
                         content: t.data.content,
                         voices: a,
                         videos: o,
@@ -319,7 +324,7 @@ Page({
         var i = this;
         return e.uploadFile(o).then(function(e) {
             var o = "fileObj." + a + "-" + n;
-            i.setData(t({}, o, "https://www.alsyqjcy.top" + e.data.url));
+            i.setData(t({}, o, "http://127.0.0.1:8082/" + e.data.url));
         });
     }
 });

@@ -1,24 +1,31 @@
+var app = getApp();
+
 var t = function(t) {
     wx.login({
         success: function(o) {
             e({
-                url: "/wechat/code",
+                url: "/wx/getOpenId",
                 method: "POST",
                 data: {
                     code: o.code
                 }
             }).then(function(o) {
                 wx.setStorageSync("userInfo", o.data), t && e(t);
+                console.log("userInfo: " + wx.getStorageSync("userInfo"));
             });
+            console.log("code: " + o.code)
         }
     });
 }, e = function(e) {
-    var o = wx.getStorageSync("userInfo"), n = {
-        Authorization: o.token ? "Bearer " + o.token : ""
+    var o = wx.getStorageSync("userInfo"),
+    n = {
+        // Authorization: o.token ? "Bearer " + o.token : ""
     };
     return new Promise(function(o, a) {
         wx.request({
-            url: "https://www.alsyqjcy.top" + e.url,
+            // url: "https://www.alsyqjcy.top" + e.url,
+            url: "http://127.0.0.1:8080" + e.url,
+            // url: "http://127.0.0.1:8080" + '/wxLogin/getUserInfo',
             method: e.method || "GET",
             data: e.data,
             header: Object.assign(n, e.header),
@@ -49,9 +56,12 @@ module.exports = {
         var e = wx.getStorageSync("userInfo");
         return new Promise(function(o, n) {
             wx.uploadFile({
-                url: "https://www.alsyqjcy.top/file/upload",
+              url: "http://127.0.0.1:8080/upload/uploadFile",
                 filePath: t,
                 name: "file",
+                formData: {
+                    openId: e.openId
+                },
                 header: {
                     Authorization: "Bearer " + e.token
                 },
@@ -69,7 +79,7 @@ module.exports = {
         });
     },
     formatTime: function(t) {
-        var e = new Date(t), n = e.getFullYear(), a = e.getMonth() + 1, s = e.getDate(), r = e.getHours(), u = e.getMinutes(), i = e.getSeconds();
+        var e = new Date(t), n = e.getFullYear(), a = e.getMonth() + 1, s = e.getDate(), r = e.getHours(), u = e.getMinutes(), i =                  e.getSeconds();
         return [ n, a, s ].map(o).join("-") + " " + [ r, u, i ].map(o).join(":");
     }
 };

@@ -3,11 +3,11 @@
         <view bindtap="changeShowReply" class="complaint-info" data-index="{{index}}">
             <view class="clue-abbr">{{item.typeFir}}</view>
             <view class="info">
-                <view class="phone">手机号码：{{item.mobile}}</view>
-                <view class="content">{{item.content}}</view>
+                <view class="phone">手机号码：{{item.phone}}</view>
+                <view class="content">举报详情：{{item.reportdetail}}</view>
                 <view class="time-clue">
                     <text>{{item.createTimeStr}}</text>
-                    <text>{{item.type}}</text>
+                    <text>{{item.reporttype}}</text>
                 </view>
             </view>
         </view>
