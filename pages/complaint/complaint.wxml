@@ -81,7 +81,7 @@
         <checkbox-group bindchange="checkboxChange">
             <checkbox value="checkbox"></checkbox>
         </checkbox-group>
-        <navigator hoverClass="none" url="/pages/introduce/introduce?categoryId={{reportTypes.complaintStatement}}">同意《诉讼举报说明》</navigator>
+        <navigator hoverClass="none" url="/pages/introduce/introduce?categoryId=reportNote">同意《诉讼举报说明》</navigator>
     </view>
     <view bindtap="submit" class="submit-button" style="background-color: {{checkedStatement?'#09BB07':'#BFBFBF'}}">确认提交举报信息</view>
 </view>

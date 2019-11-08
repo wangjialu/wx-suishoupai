@@ -13,9 +13,10 @@
     "pages/complaintSuccess/complaintSuccess"
   ],
   "window": {
-    "navigationBarTitleText": "阿拉善右旗人民检察院",
+    "navigationBarTitleText": "阿拉善左旗人民检察院",
     "navigationBarBackgroundColor": "#000",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "white",
+    "onReachBottomDistance": 50
   },
   "tabBar": {
     "custom": true,

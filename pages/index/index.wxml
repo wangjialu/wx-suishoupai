@@ -3,7 +3,7 @@
     <view class="title-wrap">
         <view class="logo-name">
             <image class="logo" mode="aspectFit" src="../../images/index/logo.png"></image>
-            <view class="name">阿拉善右旗人民检察院</view>
+            <view class="name">阿拉善左旗人民检察院</view>
         </view>
         <view>
       <!-- <navigator class="button" hoverClass="none" url="/pages/introduce/introduce?categoryId={{homeDate.litigation.id}}"> -->

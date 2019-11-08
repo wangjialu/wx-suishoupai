@@ -1,5 +1,6 @@
 <view class="container">
-    <navigator class="article-wrap" hoverClass="none" url="/pages/articleDetail/articleDetail?articleId={{item.id}}" 
+    <navigator class="article-wrap" hoverClass="none" 
+      url="/pages/articleDetail/articleDetail?category={{articleDetailType}}&articleId={{item.id}}" 
       wx:for="{{articleList}}" wx:key="{{index}}">
         <image class="cover" mode="aspectFit" src="{{item.coverImg}}"></image>
         <view class="article-info">
@@ -9,3 +10,4 @@
         </view>
     </navigator>
 </view>
+

@@ -10,21 +10,30 @@ Page({
         });
     },
     submit: function() {
+        var e = wx.getStorageSync("userInfo");
         t.request({
-            url: "/user/feedback",
+            url: "/wx/saveFeedback",
             method: "POST",
             data: {
+                openId: e.openId,
                 content: this.data.content
             }
         }).then(function(t) {
-            wx.showToast({
+            if(t.status != 200){
+              wx.showToast({
+                title: t.msg,
+                icon: "none"
+              })
+            }else{
+              wx.showToast({
                 title: "意见反馈提交成功",
                 icon: "none"
-            }), setTimeout(function() {
+              }), setTimeout(function () {
                 wx.navigateBack({
-                    delta: 1
+                  delta: 1
                 });
-            }, 2e3);
+              }, 2e3);
+            }
         });
     },
     onLoad: function() {}

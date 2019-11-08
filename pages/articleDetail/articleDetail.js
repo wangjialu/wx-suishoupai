@@ -2,21 +2,30 @@ var t = require("../../utils/util.js");
 
 Page({
     data: {
-        articleInfo: ""
+        articleInfo: "",
+        category: "",
+        articleId: ""
     },
     onLoad: function(t) {
-        this.fetchArticle(t.articleId);
+        this.fetchArticle(t.category, t.articleId);
     },
-    fetchArticle: function(e) {
+    fetchArticle: function(a, e) {
         var i = this;
         t.request({
-            url: "/entity/" + e
+            url: "/wx/" + a,
+            method: "POST",
+            data: {
+              id: e
+            }
         }).then(function(e) {
             var a = e.data;
-            a.content = a.data.html.replace(/\<img/gi, '<img style="max-width:100%;height:auto" '), 
-            a.createTimeStr = t.formatTime(a.createTime), i.setData({
+            if (a) {
+              a.content = a.content.replace(/\<img/gi, '<img style="max-width:100%;height:auto" '),
+              a.createTimeStr = t.formatTime(a.createTime), 
+              i.setData({
                 articleInfo: a
-            });
+              });
+            }
         });
     }
 });
