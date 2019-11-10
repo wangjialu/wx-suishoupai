@@ -119,13 +119,16 @@ Page({
         }).then(function(e) {
             // var o = e.data, n = o.types.indexOf(a.globalData.complaint);
           var o = e.data, n = o.indexOf(a.globalData.complaint);
-            a.globalData.complaint = "", t.setData({
+            // a.globalData.complaint = "", 
+            t.setData({
                 reportTypes: o,
                 complaintIndex: n > 0 ? n : 0
             });
         });
     },
     pickerChange: function(t) {
+      // reportTypes[complaintIndex]
+      a.globalData.complaint = this.data.reportTypes[t.detail.value],
         this.setData({
             complaintIndex: parseInt(t.detail.value)
         });
@@ -266,7 +269,8 @@ Page({
         var t = this;
         var w = wx.getStorageSync("userInfo");
         if (this.data.checkedStatement) if (this.data.content) if (this.data.mobile) {
-            for (var a = [], o = 0; o < this.data.voices.length; o++) a.push(this.uploadFile("voices", this.data.voices[o].tempFilePath, o));
+            for (var a = [], o = 0; o < this.data.voices.length; o++) 
+                a.push(this.uploadFile("voices", this.data.voices[o].tempFilePath, o));
             for (o = 0; o < this.data.videos.length; o++) a.push(this.uploadFile("videos", this.data.videos[o].tempFilePath, o));
             for (o = 0; o < this.data.images.length; o++) a.push(this.uploadFile("images", this.data.images[o], o));
             wx.showLoading({

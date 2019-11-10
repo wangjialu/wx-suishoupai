@@ -24,8 +24,8 @@ var t = function(t) {
     return new Promise(function(o, a) {
         wx.request({
             // url: "https://www.alsyqjcy.top" + e.url,
-            url: "http://172.20.10.2:8080" + e.url,
-            // url: "http://172.20.10.2:8080" + '/wxLogin/getUserInfo',
+            url: "http://127.0.0.1:8080" + e.url,
+            // url: "http://127.0.0.1:8080" + '/wxLogin/getUserInfo',
             method: e.method || "GET",
             data: e.data,
             header: Object.assign(n, e.header),
@@ -56,7 +56,7 @@ module.exports = {
         var e = wx.getStorageSync("userInfo");
         return new Promise(function(o, n) {
             wx.uploadFile({
-              url: "http://172.20.10.2:8080/upload/uploadFile",
+              url: "http://127.0.0.1:8080/upload/uploadFile",
                 filePath: t,
                 name: "file",
                 formData: {

@@ -1,7 +1,9 @@
+<import src="../../wxParse/wxParse.wxml"/> 
 <view class="container">
     <view class="article-name">{{articleInfo.title}}</view>
     <view class="article-time">{{articleInfo.createTimeStr}}</view>
     <view class="article-content">
         <rich-text nodes="{{articleInfo.content}}" space="nbsp"></rich-text>
+        <!-- <template is="wxParse" data="{{wxParseData:content.nodes}}"/>  -->
     </view>
 </view>

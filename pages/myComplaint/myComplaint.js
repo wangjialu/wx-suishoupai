@@ -13,7 +13,8 @@ var e = require("../../utils/util.js");
 Page({
     data: {
         mineReportDate: [],
-        page: 0,
+        page: 1,
+        pagesize: 7,
         canReachBottom: !0
     },
     onLoad: function() {
@@ -30,20 +31,27 @@ Page({
            url: "/wx/queryMyReport",
            method: "POST",
            data: {
-             openId: w.openId
+             openId: w.openId,
+             page: t.data.page,
+             pageSize: t.data.pagesize
            }
         }).then(function(a) {
             if (a.data && a.data.length) {
                 for (var r = 0; r < a.data.length; r++) 
                 a.data[r].createTimeStr = e.formatTime(a.data[r].createTime), 
                 a.data[r].typeFir = a.data[r].reporttype[0];
-                t.setData({
-                    mineReportDate: t.data.mineReportDate.concat(a.data),
-                    page: ++t.data.page
-                });
-            } else t.setData({
+            }
+            if (a.data.length < t.data.pagesize){
+              t.setData({
+                mineReportDate: t.data.mineReportDate.concat(a.data),
                 canReachBottom: !1
-            });
+              });
+            }else {
+              t.setData({
+                mineReportDate: t.data.mineReportDate.concat(a.data),
+                page: ++t.data.page
+              });
+            }
         });
     },
     changeShowReply: function(e) {

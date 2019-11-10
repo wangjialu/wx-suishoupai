@@ -1,4 +1,5 @@
 var t = require("../../utils/util.js");
+var WxParse = require('../../wxParse/wxParse.js');
 
 Page({
     data: {
@@ -22,6 +23,7 @@ Page({
             if (a) {
               a.content = a.content.replace(/\<img/gi, '<img style="max-width:100%;height:auto" '),
               a.createTimeStr = t.formatTime(a.createTime), 
+              // WxParse.wxParse('content', 'html', a.content, i);
               i.setData({
                 articleInfo: a
               });
