@@ -328,7 +328,7 @@ Page({
         var i = this;
         return e.uploadFile(o).then(function(e) {
             var o = "fileObj." + a + "-" + n;
-            i.setData(t({}, o, "http://172.20.10.2:8082/" + e.data.url));
+            i.setData(t({}, o, "http://127.0.0.1:8082/" + e.data.url));
         });
     }
 });
